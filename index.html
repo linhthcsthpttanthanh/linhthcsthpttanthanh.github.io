@@ -3,38 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc Học Tập - Thầy Linh</title>
+    <title>Trang Thông Tin Điện Tử Thầy Linh</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
-        header { background: #0056b3; color: #fff; padding: 20px 0; text-align: center; }
-        .container { width: 80%; margin: 20px auto; overflow: hidden; }
-        .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 { color: #0056b3; }
-        ul { list-style-type: square; padding-left: 20px; }
-        a { color: #0056b3; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        /* Cài đặt phông chữ và nền cơ bản */
+        body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; background-color: #e9ecef; }
+        
+        /* Khung chứa toàn bộ trang web (giới hạn độ rộng giống trang Bộ) */
+        .container { max-width: 1100px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        
+        /* PHẦN ĐẦU TRANG (Banner & Logo) */
+        header { display: flex; align-items: center; padding: 15px 20px; border-bottom: 3px solid #901a1e; }
+        /* Chỗ để logo */
+        .logo-placeholder { width: 80px; height: 80px; background-color: #ffcc00; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #cc0000; font-weight: bold; font-size: 14px; text-align: center; margin-right: 20px; }
+        /* Chữ tiêu đề */
+        .title-area h1 { margin: 0; color: #0056b3; font-size: 26px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* THANH MENU MÀU ĐỎ */
+        nav { background-color: #901a1e; }
+        nav ul { list-style-type: none; margin: 0; padding: 0; display: flex; }
+        nav ul li { position: relative; border-right: 1px solid #b33939; }
+        /* Chữ trong menu */
+        nav ul li a { display: block; padding: 14px 24px; color: white; text-decoration: none; font-weight: bold; font-size: 15px; text-transform: uppercase; }
+        /* Đổi màu khi rê chuột vào menu */
+        nav ul li a:hover { background-color: #b33939; }
+        
+        /* HIỆU ỨNG MENU CON (Xổ xuống) */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: #901a1e; min-width: 220px; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.2); flex-direction: column; }
+        .dropdown-menu li { border-right: none; border-bottom: 1px solid #b33939; }
+        .dropdown-menu li a { text-transform: none; padding: 12px 20px; }
+        /* Lệnh hiển thị menu con khi rê chuột vào mục cha */
+        nav ul li:hover .dropdown-menu { display: flex; }
+
+        /* PHẦN NỘI DUNG CHÍNH (Chia 2 cột) */
+        .main-content { display: flex; padding: 20px; gap: 20px; }
+        
+        /* Cột trái (Tin chính - chiếm nhiều diện tích) */
+        .left-column { flex: 7; }
+        .featured-image { width: 100%; height: 350px; background-color: #dcdcdc; display: flex; justify-content: center; align-items: center; color: #666; font-size: 18px; border-radius: 4px; }
+        .post-title { color: #0056b3; font-size: 22px; font-weight: bold; margin-top: 15px; margin-bottom: 10px; }
+        .post-excerpt { color: #444; line-height: 1.6; text-align: justify; }
+
+        /* Cột phải (Danh sách tin tức) */
+        .right-column { flex: 3; }
+        .section-heading { background-color: #0066cc; color: white; padding: 10px 15px; margin-top: 0; font-size: 16px; font-weight: bold; text-transform: uppercase; border-radius: 4px 4px 0 0; }
+        /* Từng mục tin bên phải */
+        .news-item { display: flex; gap: 10px; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #ccc; }
+        .news-thumb { width: 100px; height: 75px; background-color: #dcdcdc; flex-shrink: 0; display: flex; justify-content: center; align-items: center; font-size: 12px; color: #888; }
+        .news-link { font-size: 14px; color: #333; text-decoration: none; font-weight: bold; line-height: 1.4; }
+        .news-link:hover { color: #0056b3; }
+        
+        /* CHÂN TRANG */
+        footer { background-color: #901a1e; color: white; text-align: center; padding: 15px 0; margin-top: 20px; font-size: 14px; }
     </style>
 </head>
 <body>
+
+<div class="container">
+    <!-- 1. PHẦN BANNER THAY ĐỔI THEO Ý ANH -->
     <header>
-        <h1>Website Chia Sẻ Tài Liệu & Học Tập</h1>
+        <div class="logo-placeholder">LOGO<br>TRƯỜNG</div>
+        <div class="title-area">
+            <h1>TRANG THÔNG TIN ĐIỆN TỬ THẦY LINH</h1>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="card">
-            <h2>📚 Tài liệu môn Tin học THCS</h2>
-            <p>Chào các em học sinh, dưới đây là tài liệu các khối lớp để các em tiện ôn tập và thực hành:</p>
-            <ul>
-                <li><a href="#">Giáo trình và Bài tập Tin học Lớp 7</a></li>
-                <li><a href="#">Giáo trình và Bài tập Tin học Lớp 8</a></li>
-                <li><a href="#">Giáo trình và Bài tập Tin học Lớp 9</a></li>
-            </ul>
+    <!-- 2. THANH MENU CÓ MENU CON -->
+    <nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Tài liệu học tập ▾</a>
+                <!-- Đây là Menu con sẽ xổ ra -->
+                <ul class="dropdown-menu">
+                    <li><a href="#">Tin học 6</a></li>
+                    <li><a href="#">Tin học 7</a></li>
+                    <li><a href="#">Tin học 8</a></li>
+                    <li><a href="#">Tin học 9</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Trò chơi</a></li>
+            <li><a href="#">Chia sẻ</a></li>
+        </ul>
+    </nav>
+
+    <!-- 3. BỐ CỤC NỘI DUNG BÊN DƯỚI -->
+    <div class="main-content">
+        <!-- Cột tin tức chính bên trái -->
+        <div class="left-column">
+            <div class="featured-image">Khu vực chèn Ảnh bìa / Ảnh hoạt động học sinh</div>
+            <h2 class="post-title">Chào mừng các em học sinh đến với không gian học tập môn Tin học</h2>
+            <div class="post-excerpt">
+                <p>Website được xây dựng nhằm cung cấp tài liệu ôn tập, bài giảng điện tử và các phần mềm hỗ trợ thực hành môn Tin học khối THCS. Các em có thể tải giáo trình từng khối lớp ở thanh menu phía trên để chủ động ôn bài tại nhà.</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>📢 Thông báo mới</h2>
-            <p>Các em chú ý theo dõi lịch kiểm tra và kế hoạch nghỉ lễ sắp tới nhé.</p>
+        <!-- Cột tin tức nhỏ bên phải -->
+        <div class="right-column">
+            <h3 class="section-heading">TIN TỨC - THÔNG BÁO</h3>
+            
+            <div class="news-item">
+                <div class="news-thumb">Ảnh nhỏ 1</div>
+                <a href="#" class="news-link">Hướng dẫn cài đặt phần mềm thực hành cho học sinh</a>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-thumb">Ảnh nhỏ 2</div>
+                <a href="#" class="news-link">Tài liệu ôn tập chuẩn bị cho kỳ kiểm tra sắp tới</a>
+            </div>
+
+            <div class="news-item">
+                <div class="news-thumb">Ảnh nhỏ 3</div>
+                <a href="#" class="news-link">Chia sẻ một số trò chơi rèn luyện tư duy lập trình</a>
+            </div>
         </div>
     </div>
+
+    <!-- Chân trang -->
+    <footer>
+        <p>&copy; 2026 - Trang thông tin điện tử nội bộ phục vụ giảng dạy.</p>
+    </footer>
+
+</div>
+
 </body>
 </html>
