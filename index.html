@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Không Gian Số Thầy Linh</title>
+    <title>Không Gian Số Thầy Linh - Chỉnh Sửa Kích Thước Logo</title>
     <style>
         /* Cài đặt phông chữ và nền cơ bản */
         body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; background-color: #e9ecef; }
@@ -12,10 +12,22 @@
         /* PHẦN ĐẦU TRANG (Banner & Logo) */
         header { display: flex; align-items: center; padding: 15px 20px; border-bottom: 3px solid #901a1e; }
         
-        /* Căn chỉnh kích thước logo cho phù hợp */
-        .logo { height: 90px; margin-right: 20px; border-radius: 50%; } 
+        /* --- PHẦN CHỈNH SỬA KÍCH THƯỚC LOGO --- */
+        /* Đây là lớp mặc định cho logo */
+        .logo { 
+            margin-right: 20px; 
+            border-radius: 50%; /* Giữ logo hình tròn */
+            object-fit: cover; /* Đảm bảo ảnh không bị bóp méo */
+        }
+
+        /* Anh hãy thay đổi lớp ở đây để chọn kích thước */
+        /* Thử các lớp này trong phần HTML phía dưới */
+        .logo-small { height: 50px; width: 50px; }
+        .logo-medium { height: 70px; width: 70px; }
+        .logo-large { height: 90px; width: 90px; } /* Kích thước cũ */
+        .logo-xlarge { height: 110px; width: 110px; }
         
-        /* Chữ tiêu đề mới */
+        /* Chữ tiêu đề */
         .title-area h1 { margin: 0; color: #0056b3; font-size: 28px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
         
         /* THANH MENU MÀU ĐỎ */
@@ -54,8 +66,11 @@
 <div class="container">
     <!-- 1. PHẦN BANNER CÓ LOGO VÀ TÊN MỚI -->
     <header>
-        <!-- Chèn logo tại đây -->
-        <img src="logo.png" alt="Logo Thầy Linh" class="logo">
+        <!-- --- CHỈNH SỬA LỚP ĐỂ CHỌN KÍCH THƯỚC --- -->
+        <!-- Thay đổi lớp 'logo-medium' thành một trong các lớp sau: -->
+        <!-- 'logo-small', 'logo-medium', 'logo-large', 'logo-xlarge' -->
+        <img src="logo.png" alt="Logo Thầy Linh" class="logo logo-medium"> 
+        
         <div class="title-area">
             <h1>KHÔNG GIAN SỐ THẦY LINH</h1>
         </div>
@@ -111,7 +126,7 @@
 
     <!-- Chân trang -->
     <footer>
-        <p>&copy; 2026 - Không gian số phục vụ học tập.</p>
+        <p>&copy; 2026 - Không gian số phục vụ học tập nội bộ.</p>
     </footer>
 
 </div>
